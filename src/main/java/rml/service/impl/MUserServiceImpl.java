@@ -1,4 +1,4 @@
-package rml.service;
+package rml.service.impl;
 
 import java.util.List;
 
@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import rml.dao.MUserMapper;
 import rml.model.MUser;
+import rml.service.MUserServiceI;
 
 @Service("muserService")
 public class MUserServiceImpl implements MUserServiceI{
