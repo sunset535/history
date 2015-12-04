@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="rml.dao.HistoryTagMapper" >
+	<resultMap id="BaseResultMap" type="rml.model.HistoryTag" >
+		<id column="ID" property="id" jdbcType="DECIMAL" />
+		<result column="NAME" property="name" jdbcType="VARCHAR" />
+		<result column="CREATETIME" property="createtime" jdbcType="TIMESTAMP" />
+		<result column="LASTUPDATETIME" property="lastupdatetime" jdbcType="TIMESTAMP" />
+	</resultMap>
+	<sql id="Base_Column_List" >
+    ID, NAME, CREATETIME, LASTUPDATETIME
+	</sql>
+	<insert id="insert" parameterType="rml.model.HistoryTag" >
+    insert into historyTag (ID, NAME, CREATETIME, 
+      LASTUPDATETIME)
+    values (#{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{createtime,jdbcType=DECIMAL}, 
+      #{lastupdatetime,jdbcType=VARCHAR})
+	</insert>
+	<select id="getAll" resultMap="BaseResultMap">
+	select ID, NAME, CREATETIME, LASTUPDATETIME from historyTag
+	</select>
+</mapper>
